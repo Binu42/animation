@@ -34,7 +34,7 @@ const Header = () => {
     <header>
       <Link to='/'>
         <div className="logo">
-          <motion.svg className="pizza-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
+          <motion.svg drag className="pizza-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"
             variants={svgVariants}
             initial="hidden"
             animate="visible"
@@ -55,6 +55,9 @@ const Header = () => {
       <motion.div className="title"
         initial={{ y: -250 }}
         animate={{ y: -10 }}
+        drag
+        dragElastic={2}
+        dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
         transition={{ delay: .5, type: 'spring', stiffness: 120 }}
       >
         <h1>Pizza Joint</h1>
