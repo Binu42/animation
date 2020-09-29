@@ -4,9 +4,12 @@ import { motion } from 'framer-motion'
 
 const buttonVariants = {
   hover: {
-    scale: [1, 1.1, 1, 1.1, 1, 1.1, 1],
+    scale: 1.1,
     textShadow: '0 0 8px #fff',
-    boxShadow: '0 0 8px #fff'
+    boxShadow: '0 0 8px #fff',
+    transition: {
+      yoyo: 10
+    }
   }
 }
 
