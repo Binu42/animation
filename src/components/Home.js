@@ -8,8 +8,23 @@ const buttonVariants = {
     textShadow: '0 0 8px #fff',
     boxShadow: '0 0 8px #fff',
     transition: {
-      yoyo: 10
+      yoyo: Infinity,
+      duration: 0.3
     }
+  }
+}
+
+const containerVariants = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1,
+    transition: { delay: 1.5, duration: 1.5 }
+  },
+  exit: {
+    x: '-100vw',
+    transition: { ease: 'easeInOut' }
   }
 }
 
@@ -17,9 +32,10 @@ const Home = () => {
   return (
     <motion.div
       className="home container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, scale: 1.5 }}
-      transition={{ delay: 1, duration: 1.5 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
     >
       <h2>
         Welcome to Pizza Joint
